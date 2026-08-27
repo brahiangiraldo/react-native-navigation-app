@@ -1,16 +1,38 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { Stack } from 'expo-router'
+import { router, Stack, useNavigation } from 'expo-router'
+import type { DrawerNavigationProp } from 'expo-router/drawer'
+import { Ionicons } from '@expo/vector-icons'
 
+type DrawerParamList = Record<string, undefined>
 const StackLayout = () => {
+
+    const navigation = useNavigation<DrawerNavigationProp<DrawerParamList>>('/(drawer)')
+
+    const onHeaderLeftClick = (canGoBack: boolean | undefined) => {
+        if (canGoBack) {
+            router.back()
+            return
+        }
+
+        navigation.toggleDrawer()
+    }
+
     return (
         <Stack screenOptions={{
-            headerShown: false,
+            // headerShown: false,
             headerShadowVisible: false,
             contentStyle: {
                 backgroundColor: 'white',
-            }
+            },
+            headerLeft: ({ tintColor, canGoBack }) => (
+                <Ionicons
+                    name={canGoBack ? 'arrow-back-outline' : 'grid-outline'}
+                    size={28}
+                    color={tintColor}
+                    onPress={() => onHeaderLeftClick(canGoBack)}
+                />
+            )
         }}
+
         //  navigationBarColor: '#05192e
 
 

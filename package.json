@@ -5,6 +5,7 @@
   "dependencies": {
     "@expo/ui": "~57.0.4",
     "@expo/vector-icons": "^15.0.2",
+    "@react-navigation/native": "^7.3.18",
     "autoprefixer": "^10.5.4",
     "expo": "~57.0.4",
     "expo-constants": "~57.0.3",

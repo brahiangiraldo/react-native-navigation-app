@@ -1,7 +1,10 @@
 import { View, Text, StyleSheet } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Link } from 'expo-router'
+import { Link, useNavigation } from 'expo-router'
+import type { DrawerNavigationProp } from 'expo-router/drawer'
 import CustomButton from '@/components/shared/CustomButton'
+
+type DrawerParamList = Record<string, undefined>
 
 const styles = StyleSheet.create({
     container: {
@@ -20,29 +23,45 @@ const styles = StyleSheet.create({
     },
 })
 
+
+
 const HomeScreen = () => {
+
+
+    const navigation = useNavigation<DrawerNavigationProp<DrawerParamList>>()
+
+
+    const onOpenDrawer = () => {
+        navigation.openDrawer()
+    }
+
+
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
             <View style={styles.container}>
                 <Text style={styles.title}>Navegación</Text>
 
-                <Link href="/tabs/(stack)/products" asChild>
+                <Link href="/products" asChild>
                     <CustomButton color="primary">
                         Productos
                     </CustomButton>
                 </Link>
 
-                <Link href="/tabs/profile" asChild>
+                <Link href="/profile" asChild>
                     <CustomButton color="secondary">
                         Profile
                     </CustomButton>
                 </Link>
 
-                <Link href="/tabs/settings" asChild>
+                <Link href="/settings" asChild>
                     <CustomButton color="tertiary">
                         Ajustes
                     </CustomButton>
                 </Link>
+
+                <CustomButton onPress={onOpenDrawer}>
+                    Abrir menú
+                </CustomButton>
 
             </View>
         </SafeAreaView>

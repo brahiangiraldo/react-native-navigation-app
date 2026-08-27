@@ -84,7 +84,7 @@ const ProductScreen = () => {
     return (
       <SafeAreaView style={styles.errorContainer}>
         <Text style={styles.errorText}>Producto no encontrado</Text>
-        <Link href="/tabs/(stack)/products" asChild>
+        <Link href="/products" asChild>
           <CustomButton color="primary">
             Volver a Productos
           </CustomButton>
@@ -127,7 +127,7 @@ const ProductScreen = () => {
       </ScrollView>
 
       <View style={styles.bottomContainer}>
-        <Link href="/tabs/(stack)/products" asChild>
+        <Link href="/products" asChild>
           <CustomButton color="tertiary">
             ← Volver a Productos
           </CustomButton>

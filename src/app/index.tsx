@@ -5,7 +5,8 @@ const App = () => {
     useEffect(() => {
         // router.replace('/(stack)/home')
         // router.replace('./tabs')
-        router.replace('./drawer')
+        // router.replace('./drawer')
+        router.replace('/home')
     }, [])
 
     return null
