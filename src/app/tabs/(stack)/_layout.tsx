@@ -5,7 +5,7 @@ import { Stack } from 'expo-router'
 const StackLayout = () => {
     return (
         <Stack screenOptions={{
-            // headerShown: false 
+            headerShown: false,
             headerShadowVisible: false,
             contentStyle: {
                 backgroundColor: 'white',

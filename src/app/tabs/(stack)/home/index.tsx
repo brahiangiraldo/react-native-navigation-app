@@ -26,19 +26,19 @@ const HomeScreen = () => {
             <View style={styles.container}>
                 <Text style={styles.title}>Navegación</Text>
 
-                <Link href="/(stack)/products" asChild>
+                <Link href="/tabs/(stack)/products" asChild>
                     <CustomButton color="primary">
                         Productos
                     </CustomButton>
                 </Link>
 
-                <Link href="/(stack)/profile" asChild>
+                <Link href="/tabs/profile" asChild>
                     <CustomButton color="secondary">
                         Profile
                     </CustomButton>
                 </Link>
 
-                <Link href="/(stack)/settings" asChild>
+                <Link href="/tabs/settings" asChild>
                     <CustomButton color="tertiary">
                         Ajustes
                     </CustomButton>

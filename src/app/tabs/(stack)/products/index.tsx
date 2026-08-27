@@ -62,7 +62,7 @@ const ProductsScreen = () => {
                             <Text style={styles.cardDescription}>{item.description}</Text>
                             <View style={styles.cardFooter}>
                                 <Text style={styles.price}>${item.price}</Text>
-                                <Link href={`/(stack)/products/${item.id}`} asChild>
+                                <Link href={`/tabs/(stack)/products/${item.id}`} asChild>
                                     <CustomButton variant="text-only" color='primary'>
                                         Ver detalles
                                     </CustomButton>
@@ -75,7 +75,7 @@ const ProductsScreen = () => {
                 />
 
                 <View style={styles.bottomButton}>
-                    <Link href="/(stack)/home" asChild>
+                    <Link href="/tabs/(stack)/home" asChild>
                         <CustomButton color="primary">
                             ← Volver al Home
                         </CustomButton>

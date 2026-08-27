@@ -9,6 +9,13 @@ const TabsLayout = () => {
     return (
         <Tabs screenOptions={{ tabBarActiveTintColor: 'green' }}>
             <Tabs.Screen
+                name="(stack)"
+                options={{
+                    title: 'Home Screen',
+                    tabBarIcon: ({ color }) => <Ionicons size={28} name="person-add-outline" color={color} />,
+                }}
+            />
+            <Tabs.Screen
                 name="home/index"
                 options={{
                     title: 'Home Screen',

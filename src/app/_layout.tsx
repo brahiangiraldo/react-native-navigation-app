@@ -5,6 +5,8 @@ import { useEffect } from "react"
 import { Platform } from "react-native"
 import * as NavigationBar from "expo-navigation-bar"
 import './global.css'
+import { Drawer } from 'expo-router/drawer'
+import { GestureHandlerRootView } from "react-native-gesture-handler"
 
 const isAndroid = Platform.OS === 'android'
 
@@ -39,9 +41,14 @@ const RootLayout = () => {
     }
 
     return (
-        <SafeAreaProvider>
-            <Slot />
-        </SafeAreaProvider>
+        // <SafeAreaProvider>
+        //     <Slot />
+        // </SafeAreaProvider>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+            <SafeAreaProvider>
+                <Slot />
+            </SafeAreaProvider>
+        </GestureHandlerRootView>
     )
 }
 
